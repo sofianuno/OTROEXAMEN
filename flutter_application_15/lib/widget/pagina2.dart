@@ -53,7 +53,7 @@ class clase2 extends State<Pagina2> {
                     SizedBox(
                       width: double.infinity,
                       child: TextField(
-                        controller: n1,
+                        controller: n2,
                         keyboardType: TextInputType.number,
                         inputFormatters: [
                           FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),

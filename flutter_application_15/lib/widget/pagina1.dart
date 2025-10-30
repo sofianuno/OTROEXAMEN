@@ -37,13 +37,13 @@ class Clase extends State<pagina1> {
 
   String? _vNumero(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Escribe una edad';
+      return 'Escribe un numero';
     }
     final exp = RegExp(r'^[0-9]+$'); // Solo números
     if (!exp.hasMatch(value)) {
       return 'Solo se permiten números';
     }
-    if (value.length > 10) {
+    if (value.length < 5 || value.length > 10) {
       return 'Solo se pueden 10 dígitos';
     }
     return null;
@@ -54,9 +54,9 @@ class Clase extends State<pagina1> {
       return 'Escribe un sexo';
     }
 
-    final exp = RegExp(r'^[MmFf]$'); // Solo permite M o F (una sola letra)
+    final exp = RegExp(r'^[M,m,F,f]$'); // Solo permite M o F (una sola letra)
     if (!exp.hasMatch(value)) {
-      return 'Solo se permite una letra: My m o F y f';
+      return 'Solo se permite una letra: M y m o F y f';
     }
 
     return null;
@@ -91,6 +91,7 @@ class Clase extends State<pagina1> {
         child: Column(
           children: [
             Expanded(
+              flex: 1,
               child: Container(
                 width: double.infinity,
                 color: const Color.fromARGB(255, 237, 240, 245),
@@ -118,6 +119,7 @@ class Clase extends State<pagina1> {
               ),
             ),
             Expanded(
+              flex: 1,
               child: Container(
                 width: double.infinity,
                 color: const Color.fromARGB(255, 237, 240, 245),
@@ -129,8 +131,8 @@ class Clase extends State<pagina1> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: validar,
-                        child: Text('Entrar'),
+                        onPressed: () {},
+                        child: Text('Concatenar'),
                       ),
                     ),
                   ],
